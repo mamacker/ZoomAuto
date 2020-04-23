@@ -1,4 +1,4 @@
-// Type "Hello World" then press enter.
+// Pull forward windows using wmctrl on Linux, then send the appropriate key strokes.
 var robot = require("robotjs");
 const {exec} = require('child_process');
 
@@ -61,4 +61,4 @@ app.get('/hang', (req, res) => {
   lastPress = curPress;
 })
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`Zoom remote listening at http://localhost:${port}`))
