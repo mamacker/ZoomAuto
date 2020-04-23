@@ -1,0 +1,15 @@
+[Unit]
+Description=Run forever check service
+After=network-online.target
+
+[Service]
+Environment=XAUTHORITY=/run/user/1001/gdm/Xauthority
+WorkingDirectory=/home/mamacker/tools/ZoomAuto/
+ExecStart=/usr/bin/nodejs /home/mamacker/tools/ZoomAuto/index.js
+StandardOutput=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+Alias=zoomme.service
+

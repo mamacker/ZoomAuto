@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+<style>
+div {
+  height: 300px;
+  width: 500px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+</style>
+  </head>
+  <body>
+    <div id="audio" style="background-color:green">
+      AUDIO
+    </div>
+    <div id="camera" style="background-color:lightblue">
+      CAMERA
+    </div>
+    <div id="hang" style="background-color:gray">
+      HANGUP
+    </div>
+  <script>
+    $("#audio").click(() => {
+      $.ajax({
+        url: "/aud",
+        context: document.body
+      }).done(function() {
+        $( this ).addClass( "done" );
+      });
+    });
+    $("#camera").click(() => {
+      $.ajax({
+        url: "/cam",
+        context: document.body
+      }).done(function() {
+        $( this ).addClass( "done" );
+      });
+    });
+    $("#hang").click(() => {
+      $.ajax({
+        url: "/hang",
+        context: document.body
+      }).done(function() {
+        $( this ).addClass( "done" );
+      });
+    });
+  </script>
+  </body>
+</html>
