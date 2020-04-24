@@ -52,7 +52,9 @@ app.get('/hang', (req, res) => {
   if (curPress - lastPress > 10000) {
     // Press enter.
     robot.keyTap("q", "alt");
-    robot.keyTap("enter");
+    setTimeout(() => {
+      robot.keyTap("enter");
+    }, 300);
   } else {
     // Press enter.
     robot.keyTap("w", "control");
